@@ -16,7 +16,7 @@ echo Running Script: $script...
 
 # Run the script with interactive inputs
 forge script $script \
-    --rpc-url $RPC_URL \
+    --rpc-url $SEPOLIA_RPC_URL \
     --broadcast \
     -vvvv \
     --private-key $DEPLOYER_KEY \
