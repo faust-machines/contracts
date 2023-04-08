@@ -25,3 +25,6 @@ test
 - [forge-template](https://github.com/foundry-rs/forge-template)
 - [foundry-toolchain](https://github.com/foundry-rs/foundry-toolchain)
 
+### Current contract addresses
+
+Sepolia: [0xe89e8cd6ec3bbf75883657ac9ec63e0c1238ae0a](https://sepolia.etherscan.io/address/0xe89e8cd6ec3bbf75883657ac9ec63e0c1238ae0a)
