@@ -1,1 +1,2 @@
-FaustExampleTest:testSetGm() (gas: 107432)
+FaustExampleTest:testSetGm() (gas: 107460)
+FaustExampleTest:testGetGm() (gas: 14090)
