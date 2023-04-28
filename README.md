@@ -1,6 +1,24 @@
 # Faust Contracts
 
+### Overview
+
 These are the contracts for Faust
+
+### Getting started
+
+Open your terminal and type in the following command:
+
+```bash
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
+```
+
+Then you can:
+
+```bash
+forge build
+forge test
+```
 
 ### Blueprint
 
