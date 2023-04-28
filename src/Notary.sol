@@ -1,29 +1,32 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.17;
+
+/// @title Notary
 contract Notary {
-    address private deployer;
-    mapping(bytes32 => bytes32[]) private proofs;
+  struct ProofEvent {
+    string fileName;
+    string filePath;
+    bytes32 proof;
+  }
 
-    constructor() {
-        deployer = msg.sender;
-    }
+  mapping(bytes32 => ProofEvent) public proofEvents;
+  address public owner;
 
-    function addProof(bytes32 key, bytes32[] memory values) public {
-        require(msg.sender == deployer, "Only the deployer can call this function");
-        for (uint i = 0; i < values.length; i++) {
-            proofs[key].push(values[i]);
-        }
-    }
+  constructor() {
+    owner = msg.sender;
+  }
 
-    function addProofs(bytes32[] memory keys, bytes32[][] memory values) public {
-        require(msg.sender == deployer, "Only the deployer can call this function");
-        require(keys.length == values.length, "Number of keys and values arrays must match");
-        for (uint i = 0; i < keys.length; i++) {
-            for (uint j = 0; j < values[i].length; j++) {
-                proofs[keys[i]].push(values[i][j]);
-            }
-        }
-    }
+  function getProofEvent(bytes32 proofKey) external view returns (ProofEvent memory) {
+    return proofEvents[proofKey];
+  }
 
-    function getProofs(bytes32 key) public view returns (bytes32[] memory) {
-        return proofs[key];
+  function addProofEvent(string memory fileName, string memory filePath, bytes32 newProof) external {
+    proofEvents[newProof] = ProofEvent(fileName, filePath, newProof);
+  }
+
+  function addProofEvents(ProofEvent[] calldata events) external {
+    for (uint i = 0; i < events.length; i++) {
+      proofEvents[events[i].proof] = events[i];
     }
+  }
 }

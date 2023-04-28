@@ -45,4 +45,4 @@ test
 
 ### Current contract addresses
 
-Sepolia: [0xe89e8cd6ec3bbf75883657ac9ec63e0c1238ae0a](https://sepolia.etherscan.io/address/0xe89e8cd6ec3bbf75883657ac9ec63e0c1238ae0a)
+Sepolia: [0x5e863322103026660Ba8bca1fc1dA3aD7EC1f4aB](https://sepolia.etherscan.io/address/0x5e863322103026660Ba8bca1fc1dA3aD7EC1f4aB)
