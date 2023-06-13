@@ -9,11 +9,9 @@ contract RealityEventTest is Test {
     using stdStorage for StdStorage;
 
     RealityEvent realityEvent;
-    uint256 testNumber;
 
     function setUp() public {
         realityEvent = new RealityEvent();
-        testNumber = 42;
     }
 
     function testNotarize() public {
