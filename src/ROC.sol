@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-/// @title Notary
-contract Notary {
+/// @title ROC 
+contract ROC {
   struct ProofEvent {
+    string topicName;
     string fileName;
     string filePath;
     bytes32 proof;
