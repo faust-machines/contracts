@@ -3,13 +3,14 @@
 # Read the RPC URL
 source .env
 
-# Read script
-echo Which script do you want to run?
-read script
+# Check if an argument is provided
+if [ -z "$1" ]; then
+  echo "No argument provided. Please provide an path for script to deploy."
+  exit 1
+fi
 
-# Read script arguments
-echo Enter script arguments, or press enter if none:
-read -ra args
+# set script var
+script=$1
 
 # Run the script
 echo Running Script: $script...
