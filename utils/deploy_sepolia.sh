@@ -19,5 +19,5 @@ forge script $script \
     --rpc-url $SEPOLIA_RPC_URL \
     --broadcast \
     -vvvv \
-    --private-key $DEPLOYER_KEY \
+    --private-key $SEPOLIA_PRIVATE_KEY \
     $args

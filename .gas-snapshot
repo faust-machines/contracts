@@ -1,2 +1,5 @@
-FaustExampleTest:testSetGm() (gas: 107460)
-FaustExampleTest:testGetGm() (gas: 14090)
+ROCTest:testROC() (gas: 2301)
+RealityEventTest:testGetEventData() (gas: 228023)
+RealityEventTest:testNotarize() (gas: 214294)
+RealityEventTest:testRocInfo() (gas: 225501)
+RealityEventTest:testSetURI() (gas: 33618)

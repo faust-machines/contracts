@@ -3,15 +3,24 @@ pragma solidity ^0.8.17;
 
 import {Script} from 'forge-std/Script.sol';
 
-import {FaustExample} from "src/FaustExample.sol";
+import {ROC} from "src/ROC.sol";
 
-/// @notice A very simple deployment script
+/// @notice A deployment script for RealityEvent, Notary, and ROC contracts
 contract Deploy is Script {
+  ROC public roc;
 
   /// @notice The main script entrypoint
-  function run() external returns (FaustExample example) {
+  function run() external {
     vm.startBroadcast();
-    example = new FaustExample("GM");
+
+    roc = new ROC();
+
     vm.stopBroadcast();
   }
 }
+
+
+
+
+
+
