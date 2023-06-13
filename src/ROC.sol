@@ -21,8 +21,8 @@ contract ROC {
     return proofEvents[proofKey];
   }
 
-  function addProofEvent(string memory fileName, string memory filePath, bytes32 newProof) external {
-    proofEvents[newProof] = ProofEvent(fileName, filePath, newProof);
+  function addProofEvent(string memory topicName, string memory fileName, string memory filePath, bytes32 newProof) external {
+    proofEvents[newProof] = ProofEvent(topicName, fileName, filePath, newProof);
   }
 
   function addProofEvents(ProofEvent[] calldata events) external {

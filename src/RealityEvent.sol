@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
+import "openzeppelin-contracts/contracts/token/ERC1155/ERC1155.sol";
 
 contract RealityEvent is ERC1155 {
     uint256 public constant REALITY_EVENT_TYPE = 1;
@@ -10,15 +10,15 @@ contract RealityEvent is ERC1155 {
     struct EventData {
         string facility_name;
         string sensor_name;
-        float32 weight_kg;
+        uint256 weight_kg;
     }
 
     struct ROCInfo {
         string device_id;
         address roc_device_address;
         address roc_contract_address;
-        float32 latitude;
-        float32 longitude;
+        uint256 latitude;
+        uint256 longitude;
     }
 
     // member variables 

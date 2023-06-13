@@ -9,7 +9,6 @@ import {ROC} from "src/ROC.sol";
 /// @notice A deployment script for RealityEvent, Notary, and ROC contracts
 contract Deploy is Script {
   RealityEvent public realityEvent;
-  Notary public notary;
   ROC public roc;
 
   /// @notice The main script entrypoint
