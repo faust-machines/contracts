@@ -1,24 +1,24 @@
-# Faust Contracts
+# Contracts
 
 ### Overview
 
 These are the contracts for Faust
 
+### Requirements:
+- Rust: https://www.rust-lang.org/tools/install
+- Foundry: https://book.getfoundry.sh/getting-started/installation
+- `svm-rs`: https://github.com/alloy-rs/svm-rs
+
 ### Getting started
 
-Open your terminal and type in the following command:
-
-```bash
-curl -L https://foundry.paradigm.xyz | bash
-foundryup
-```
-
-Then you can:
-
+**Building and running**
 ```bash
 forge build
 forge test
 ```
+
+**Updating**
+`forge update`
 
 ### Blueprint
 
