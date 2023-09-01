@@ -21,6 +21,11 @@ forge test
 `forge update`
 
 **Deploying**
+`./scripts/deploy_local.sh` etc
+
+**Snapshot**
+`forge snapshot --snap .gas-snapshot`
+
 
 ### Blueprint
 
