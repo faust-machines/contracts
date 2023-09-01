@@ -13,7 +13,7 @@ contract Deploy is Script {
   function run() external {
     vm.startBroadcast();
 
-    nft = new SimpleNFT();
+    nft = new SimpleNFT("SimpleNFT", "SNFT");
 
     vm.stopBroadcast();
   }

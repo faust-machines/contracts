@@ -20,6 +20,8 @@ forge test
 **Updating**
 `forge update`
 
+**Deploying**
+
 ### Blueprint
 
 ```txt
