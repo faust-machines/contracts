@@ -2,7 +2,7 @@
 
 ### Overview
 
-These are the contracts for Faust
+These are example contracts for Faust that work with a ROC
 
 ### Requirements:
 - Rust: https://www.rust-lang.org/tools/install
@@ -11,13 +11,16 @@ These are the contracts for Faust
 
 ### Getting started
 
+**Installation**
+Install Foundry: `curl -L https://foundry.paradigm.xyz | bash`
+
 **Building and running**
 ```bash
 forge build
 forge test
 ```
 
-**Updating**
+**Update**
 `forge update`
 
 **Deploying**
@@ -25,21 +28,6 @@ forge test
 
 **Snapshot**
 `forge snapshot --snap .gas-snapshot`
-
-
-### Blueprint
-
-```txt
-lib
-├─ forge-std — https://github.com/foundry-rs/forge-std
-├─ solmate — https://github.com/transmissions11/solmate
-scripts
-├─ Deploy.s.sol — Example Contract Deployment Script
-src
-├─ FaustExample — Example Contract
-test
-└─ FaustExample.t — Example Contract Tests
-```
 
 ### Notable Mentions
 
