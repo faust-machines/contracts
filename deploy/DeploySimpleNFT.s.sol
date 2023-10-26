@@ -3,17 +3,17 @@ pragma solidity ^0.8.17;
 
 import {Script} from 'forge-std/Script.sol';
 
-import {RealityEvent} from "src/RealityEvent.sol";
+import {SimpleNFT} from "src/SimpleNFT.sol";
 
 /// @notice A deployment script for RealityEvent, Notary, and ROC contracts
 contract Deploy is Script {
-  RealityEvent public realityEvent;
+  SimpleNFT public nft;
 
   /// @notice The main script entrypoint
   function run() external {
     vm.startBroadcast();
 
-    realityEvent = new RealityEvent();
+    nft = new SimpleNFT("SimpleNFT", "SNFT");
 
     vm.stopBroadcast();
   }
