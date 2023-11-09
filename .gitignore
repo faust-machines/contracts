@@ -6,7 +6,7 @@ out/
 .env.prod
 
 # Ignore all vscode settings
-.vscode/
+.vscode
 
 # Ignore flattened files
 flattened.txt

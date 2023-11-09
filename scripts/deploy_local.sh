@@ -1,30 +1,42 @@
 #!/usr/bin/env bash
 
-# Read the RPC URL
-source .env
-
-# Check if an argument is provided
-if [ -z "$1" ]; then
-  echo "No argument provided. Please provide an path for script to deploy."
+# Ensure the .env file exists
+if [ ! -f .env ]; then
+  echo "The .env file is missing. Please make sure it exists in the current directory."
   exit 1
 fi
 
-# set script var
+# Source the .env file to read the RPC URL, PRIVATE_KEY, and ADDRESS
+source .env
+
+# Check if the PRIVATE_KEY and ADDRESS variables are set in the .env file
+if [ -z "$LOCAL_PRIVATE_KEY" ] || [ -z "$LOCAL_DEPLOYER_ADDRESS" ]; then
+  echo "The PRIVATE_KEY and ADDRESS must be set in the .env file."
+  exit 1
+fi
+
+# Check if an argument is provided for the script path
+if [ -z "$1" ]; then
+  echo "No argument provided. Please provide a path for the script to deploy."
+  exit 1
+fi
+
+# Set script var to the first argument
 script=$1
 
-# Run the script
-echo Running Script: $script...
+# Optionally, handle additional arguments for the script
+args="${@:2}"
 
-# We specify the anvil url as http://localhost:8545
-# We need to specify the sender for our local anvil node
+# Run the script with verbosity and provided arguments
+echo "Running Script: $script..."
 forge script $script \
     --fork-url http://localhost:8545 \
     --broadcast \
     -vvvv \
-    --sender 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266 \
-    --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
+    --sender $ADDRESS \
+    --private-key $PRIVATE_KEY \
     $args
 
-# Once finished, we want to kill our anvil instance running in the background
+# Setup trap handlers to clean up on exit or interruption
 trap "exit" INT TERM
 trap "kill 0" EXIT
