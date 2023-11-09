@@ -2,7 +2,7 @@
 
 ### Overview
 
-These are the contracts for Faust
+These are example contracts for Faust that work with a ROC
 
 ### Requirements:
 - Rust: https://www.rust-lang.org/tools/install
@@ -11,34 +11,28 @@ These are the contracts for Faust
 
 ### Getting started
 
+**Installation**
+Install Foundry: `curl -L https://foundry.paradigm.xyz | bash`
+
 **Building and running**
 ```bash
 forge build
 forge test
 ```
 
-**Updating**
-`forge update`
+**Update**
+```bash
+forge update
+```
 
 **Deploying**
-`./scripts/deploy_local.sh` etc
+```bash
+./scripts/deploy_local.sh ./deploy/DeploySimpleNFT.s.sol
+```
 
 **Snapshot**
-`forge snapshot --snap .gas-snapshot`
-
-
-### Blueprint
-
-```txt
-lib
-├─ forge-std — https://github.com/foundry-rs/forge-std
-├─ solmate — https://github.com/transmissions11/solmate
-scripts
-├─ Deploy.s.sol — Example Contract Deployment Script
-src
-├─ FaustExample — Example Contract
-test
-└─ FaustExample.t — Example Contract Tests
+```bash
+forge snapshot --snap .gas-snapshot
 ```
 
 ### Notable Mentions
@@ -52,4 +46,4 @@ test
 
 ### Current contract addresses
 
-Sepolia: [0x5e863322103026660Ba8bca1fc1dA3aD7EC1f4aB](https://sepolia.etherscan.io/address/0x5e863322103026660Ba8bca1fc1dA3aD7EC1f4aB)
+TBD
