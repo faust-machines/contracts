@@ -21,13 +21,19 @@ forge test
 ```
 
 **Update**
-`forge update`
+```bash
+forge update
+```
 
 **Deploying**
-`./scripts/deploy_local.sh` etc
+```bash
+./scripts/deploy_local.sh ./deploy/DeploySimpleNFT.s.sol
+```
 
 **Snapshot**
-`forge snapshot --snap .gas-snapshot`
+```bash
+forge snapshot --snap .gas-snapshot
+```
 
 ### Notable Mentions
 
@@ -40,4 +46,4 @@ forge test
 
 ### Current contract addresses
 
-Sepolia: [0x5e863322103026660Ba8bca1fc1dA3aD7EC1f4aB](https://sepolia.etherscan.io/address/0x5e863322103026660Ba8bca1fc1dA3aD7EC1f4aB)
+TBD

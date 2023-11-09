@@ -37,4 +37,54 @@ contract SimpleNFTTest is Test {
             assertTrue(true, "Expected revert");
         }
     }
+
+    // Tests for the addProof function
+    function test_AddProof() public {
+        string memory proof = "Proof of Concept";
+        string memory topicName = "Topic 1";
+
+        simpleNFT.addProof(proof, topicName);
+    }
+
+    // Tests for the getProof function
+    function test_GetProof() public {
+        string memory proof = "Proof of Concept";
+        string memory topicName = "Topic 1";
+        simpleNFT.addProof(proof, topicName);
+        bytes32 expectedHash = keccak256(abi.encodePacked(proof, topicName));
+        bytes32 actualHash = simpleNFT.getProof(0);
+        assertEq(actualHash, expectedHash, "The hash of the proof should match the expected hash");
+    }
+
+    // Tests for out of bounds in getProof function
+    function test_GetProofOutOfBounds() public {
+        try simpleNFT.getProof(0) {
+            assertTrue(false, "Should have reverted");
+        } catch Error(string memory reason) {
+            assertEq(reason, "Index out of bounds", "Expected revert with 'Index out of bounds'");
+        }
+    }
+
+    // Tests for empty proof in addProof function
+    function test_AddProofEmptyProof() public {
+        string memory proof = "";
+        string memory topicName = "Topic 1";
+        try simpleNFT.addProof(proof, topicName) {
+            assertTrue(false, "Should have reverted");
+        } catch Error(string memory reason) {
+            assertEq(reason, "Proof cannot be empty", "Expected revert with 'Proof cannot be empty'");
+        }
+    }
+
+    // Tests for empty topic name in addProof function
+    function test_AddProofEmptyTopicName() public {
+        string memory proof = "Proof of Concept";
+        string memory topicName = "";
+        try simpleNFT.addProof(proof, topicName) {
+            assertTrue(false, "Should have reverted");
+        } catch Error(string memory reason) {
+            assertEq(reason, "Topic name cannot be empty", "Expected revert with 'Topic name cannot be empty'");
+        }
+    }
+
 }
