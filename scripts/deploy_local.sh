@@ -30,11 +30,11 @@ args="${@:2}"
 # Run the script with verbosity and provided arguments
 echo "Running Script: $script..."
 forge script $script \
-    --fork-url http://localhost:8545 \
+    --fork-url $LOCAL_RPC_URL \
     --broadcast \
     -vvvv \
-    --sender $ADDRESS \
-    --private-key $PRIVATE_KEY \
+    --sender $LOCAL_DEPLOYER_ADDRESS \
+    --private-key $LOCAL_PRIVATE_KEY \
     $args
 
 # Setup trap handlers to clean up on exit or interruption

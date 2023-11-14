@@ -28,6 +28,7 @@ forge update
 **Deploying**
 ```bash
 ./scripts/deploy_local.sh ./deploy/DeploySimpleNFT.s.sol
+./scripts/deploy_sepolia.sh ./deploy/DeploySimpleNFT.s.sol
 ```
 
 **Snapshot**
